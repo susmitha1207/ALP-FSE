@@ -1,0 +1,61 @@
+.navbar-light .navbar-toggler-icon {
+    background-image: url(data:image/svg+xml,%3csvg );
+}
+.nav-link,.navbar-brand{
+    color: #ffffff !important;
+    font-weight: 100; 
+  }
+  .navbar-brand{
+    color: #ffffff !important;
+    font-weight: bolder; 
+  }
+.navbar-brand1{
+    font-weight: 100; 
+  }
+.navbar{
+    background-color: #0039A6 !important;
+    
+}
+
+    /* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+      
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+      /* Loader end*/
+    
+.dropdown-item{
+    color: #000000 !important;
+}
+/*.dropdown-toggle{
+    color: black !important;
+}*/
+@media screen and (min-width: 1400px) {
+    .navMenuRight{
+        right: 5%;
+        position: absolute;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .navMenuRight{
+        right: 5%;
+        position: absolute;
+    }
+}
+@media screen and (min-width: 1900px) {
+    .navMenuRight{
+        right: 5%;
+        position: absolute;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .navMenuRight{
+        right: 5%;
+        position: absolute;
+    }
+}

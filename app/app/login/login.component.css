@@ -1,0 +1,30 @@
+.login,
+.image {
+  
+  min-height: 100vh;
+}
+.loginHeading1{
+  width: 100%;
+  font-size: 25px;
+}
+.bg-image {
+  /*background-image: url('http://localhost:4200/assets/img/login.JPG');*/
+  background-size: cover;
+  background-position: center center;
+  margin-top: 10vh;
+  height: 80vh;
+}
+.faded-text-color{
+  color: #6c757d9c!important;
+}
+.brand-style-blue{
+  color: #0016ff!important;
+  font-weight: bold;
+}
+.brand-style-green{
+  color: limegreen!important;
+}
+.btn-green{
+    border: none;
+    background-color: limegreen;
+}

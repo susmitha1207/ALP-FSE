@@ -1,0 +1,192 @@
+<app-header></app-header>
+
+<!--<div class="text-center" style="padding: 5px;">
+  <div class="bg-light">
+    <h2 class="heading">FEEDBACK DASHBOARD</h2>
+  </div>
+</div>
+   
+      <div class="row" style="margin: 0px;">
+        <div class="col-md-9" style="border-right: solid thin darkgrey;">
+            <div *ngIf="isHidden" class="row" style="text-align: center">
+              <div style="width: 100%;padding: 1% 1% 2% 0%;"><h5>Feedback Percentage</h5></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 col-xs-1"></div>
+                <div *ngIf="isHidden" class="col-sm-2 col-xs-2" style="text-align: center;">
+                  <div class="card mb-2" >
+                      Excellent
+                            <circle-progress
+                                [percent]="excellentPer"
+                                [radius]="50"
+                                [outerStrokeWidth]="8"
+                                [innerStrokeWidth]="1"
+                                [outerStrokeColor]="'#5f9700'"
+                                [innerStrokeColor]="'#02b9ee'"
+                                [animation]="true"
+                                [animationDuration]="500" 
+                                [showSubtitle] = "false"
+                                [titleFontSize]="25"
+                               
+                            ></circle-progress>
+                  </div>
+                </div>
+                <div *ngIf="isHidden" class="col-sm-2 col-xs-2" style="text-align: center;">
+                  <div class="card mb-2" >
+                        Good
+                              <circle-progress
+                                  [percent]="goodPer"
+                                  [radius]="50"
+                                  [outerStrokeWidth]="8"
+                                  [innerStrokeWidth]="1"
+                                  [outerStrokeColor]="'#5f9700'"
+                                  [innerStrokeColor]="'#02b9ee'"
+                                  [animation]="true"
+                                  [animationDuration]="500" 
+                                  [showSubtitle] = "false"
+                                  [titleFontSize]="25"
+                              ></circle-progress>
+                    </div>
+                </div>
+                <div *ngIf="isHidden" class="col-sm-2 col-xs-2" style="text-align: center;">
+                  <div class="card mb-2" >
+                      Average
+                            <circle-progress
+                                [percent]="averagePer"
+                                [radius]="50"
+                                [outerStrokeWidth]="8"
+                                [innerStrokeWidth]="1"
+                                [outerStrokeColor]="'#5f9700'"
+                                [innerStrokeColor]="'#02b9ee'"
+                                [animation]="true"
+                                [animationDuration]="500" 
+                                [showSubtitle] = "false"
+                                [titleFontSize]="25"
+                            ></circle-progress>
+                  </div>
+              </div>
+              <div *ngIf="isHidden" class="col-sm-2 col-xs-2" style="text-align: center;">
+                <div class="card mb-2" >
+                    Fair
+                          <circle-progress
+                              [percent]="fairPer"
+                              [radius]="50"
+                              [outerStrokeWidth]="8"
+                              [innerStrokeWidth]="1"
+                              [outerStrokeColor]="'#5f9700'"
+                              [innerStrokeColor]="'#02b9ee'"
+                              [animation]="true"
+                              [animationDuration]="500" 
+                              [showSubtitle] = "false"
+                              [titleFontSize]="25"
+                          ></circle-progress>
+                  </div>
+              </div>
+              <div *ngIf="isHidden" class="col-sm-2 col-xs-2" style="text-align: center;">
+                <div class="card mb-2" >
+                    Poor
+                          <circle-progress
+                              [percent]="poorPer"
+                              [radius]="50"
+                              [outerStrokeWidth]="8"
+                              [innerStrokeWidth]="1"
+                              [outerStrokeColor]="'#5f9700'"
+                              [innerStrokeColor]="'#02b9ee'"
+                              [animation]="true"
+                              [animationDuration]="500" 
+                              [showSubtitle] = "false"
+                              [titleFontSize]="25"
+                          ></circle-progress>
+                </div>
+              </div>
+            </div>
+
+      <div class="row" style="margin-top: 3%;padding-top:2%;border-top: solid thin darkgray">
+        <div style="width: 90%;height:auto;margin: auto; text-align: center">
+              <h5>{{title}}</h5>
+            <canvas baseChart
+                [chartType]="'bar'"
+                [datasets]="chartData"
+                [labels]="labels"
+                [options]="chartOptions"
+                [legend]="true"
+                [colors]="colors"
+                (chartClick)="onChartClick($event)">
+            </canvas>
+          </div>
+      </div>
+      
+  </div>
+  <div class="col-md-3 ">
+    <div class="row" style="text-align: center">
+      <div style="width: 100%;padding: 1% 1% 2% 0%;">
+        <h5>Average Rating</h5>
+      </div>
+    </div>
+    <div class="rateDiv">
+        <table class="rating-table table-striped" style="margin: auto;">
+        <thead>
+            <tr style="background-color: #d8eef5">
+            <th>Event</th>
+            <th>Average Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of eventReport">
+                <td>{{ event.event }}</td>
+                <td>
+                    &nbsp;<fa-icon [icon]="faAngry"   title="Poor"      size="1x" class="feedIcon" [ngClass]="{'s-active': event.avgScore<=1}"></fa-icon>
+                    &nbsp;<fa-icon [icon]="faFrown"   title="Fair"      size="1x" class="feedIcon" [ngClass]="{'s-active': event.avgScore>1 && event.avgScore<=2}"></fa-icon>
+                    &nbsp;<fa-icon [icon]="faMeh"     title="Average"   size="1x" class="feedIcon" [ngClass]="{'s-active': event.avgScore>2 && event.avgScore<=3}"></fa-icon>
+                    &nbsp;<fa-icon [icon]="faSmile"   title="Good"      size="1x" class="feedIcon" [ngClass]="{'s-active': event.avgScore>3 && event.avgScore<=4}"></fa-icon>
+                    &nbsp;<fa-icon [icon]="faGrinAlt" title="Excellent" size="1x" class="feedIcon" [ngClass]="{'s-active': event.avgScore>4}"></fa-icon>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>-->
+
+<!--<div class="container bootstrap snippet">-->
+  <div class="row dashMargin">
+      
+    <div class="col-lg-2 col-sm-6"></div>
+    <!--col 1 -->
+    <div class="col-lg-2 col-sm-6">
+        <div class="tile-content dark-blue">
+          <div class="tile-description text-faded"> Total Events</div>
+          <div class="tile-number text-faded ">{{noOfEvents }}</div>
+          <a class="tile-footer" href="#">View Details <i class="fa fa-chevron-circle-right"></i></a>
+        </div>
+    </div>
+     <!--col 2 -->
+    <div class="col-lg-2 col-sm-6">
+        <div class="tile-content red">
+          <div class="tile-description text-faded"> Lives Impacted</div>
+          <div class="tile-number text-faded ">-</div>
+          <a class="tile-footer" href="#">View Details <i class="fa fa-chevron-circle-right"></i></a>
+        </div>
+    </div>
+    <!--col 3 -->
+    <div class="col-lg-2 col-sm-6">
+        <div class="tile-content purple">
+          <div class="tile-description text-faded"> Total Volunteers</div>
+          <div class="tile-number text-faded ">{{noOfVolunteers}}</div>
+          <a class="tile-footer" href="#">View Details <i class="fa fa-chevron-circle-right"></i></a>
+        </div>
+    </div>
+    <!--col 4 -->
+    <div class="col-lg-2 col-sm-6">
+        <div class="tile-content dark-gray ">
+          <div class="tile-description text-faded"> Total Participents</div>
+          <div class="tile-number text-faded ">-</div>
+          <a class="tile-footer" href="#">View Details <i class="fa fa-chevron-circle-right"></i></a>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-6"></div>
+  </div> 
+<!--</div>  -->
+
+<app-footer></app-footer>

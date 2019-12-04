@@ -1,0 +1,45 @@
+/*.input-group-prepend{
+    width: 30%;
+}
+.input-group{
+    margin-top: 3%;
+}
+.navbar{
+    background-color: #c7c7c7b8 !important;
+  }
+  .row{
+      margin-left: 0% !important;
+      margin-right: 0% !important;
+  }
+  .logCls{
+    border: solid 1px lightgrey;
+    width: 32%;
+    margin: 0% 34%;
+  }
+ .card-title{
+     text-align: center;
+ }
+@media screen and (max-width: 500px) {
+    .logCls{
+        width: 90% !important;
+        margin: 20% 5% !important;
+      }
+}*/
+
+.login,
+.image {
+  
+  min-height: 100vh;
+}
+
+.bg-image {
+  /*background-image: url('http://localhost:4200/assets/img/login.JPG');*/
+  background-size: cover;
+  background-position: center center;
+  margin-top: 10vh;
+  height: 80vh;
+}
+.btn-green{
+    border: none;
+    background-color: limegreen;
+}
