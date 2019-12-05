@@ -48,7 +48,7 @@ export class FeedbackComponent implements OnInit {
     this.feedback.employeeId= this.route.snapshot.queryParamMap.get('id');
 
     //url parameter checking method calling...On condition failure redirect to login
-    this.feedbackService.urlchk(this.feedback.eventId,this.feedback.employeeId);
+    //this.feedbackService.urlchk(this.feedback.eventId,this.feedback.employeeId);
     
     //load question from service
     //var questions = this.feedbackService.getQuestions();

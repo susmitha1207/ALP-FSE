@@ -63,7 +63,8 @@ export class DatatablesLibraryComponent implements AfterViewInit, OnDestroy, OnI
       pageLength: 5,
       processing: true,
       dom       : 'Bfrtip',
-      buttons: [ 'copy', 'csv', 'excel', 'pdf', 'print' ],
+      // buttons: [ 'copy', 'csv', 'excel', 'pdf', 'print' ],
+      buttons: [ {extend: 'excel',text:'Download Excel'}, ],
     }
   }
 

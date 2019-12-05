@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable,Subject } from 'rxjs';
 import { User } from '../models/user';
 
 @Injectable({
@@ -11,7 +11,10 @@ export class AuthenticationService {
 
   private authServerUrl = environment.authServerUrl;
   private user: User;
+  
   userData: any = {};
+
+private subject = new Subject<any>();
 
   constructor(private http: HttpClient) {
   }

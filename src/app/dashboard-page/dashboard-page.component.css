@@ -62,7 +62,7 @@
 }
 .tile-footer {
     background-color: rgba(0, 0, 0, 0.1);
-    color: rgba(255, 255, 255, 0.5);
+    color:white;
     display: block;
     padding: 5px;
     transition: all 0.3s ease-in-out 0s;
@@ -76,10 +76,10 @@
 .dark-blue  {    background-color: #34495E;}
 .green      {    background-color: #16A085;}
 .blue       {    background-color: #2980B9;}
-.orange     {    background-color: #F39C12;}
-.red        {    background-color: #E74C3C;}
-.purple     {    background-color: #8E44AD;}
-.dark-gray  {    background-color: #7F8C8D;}
+.orange     {    background-color: #ff8f1c;}
+.red        {    background-color: #d9534f;}
+.purple     {    background-color: #c800a1;}
+.dark-gray  {    background-color: #53565a;}
 .gray       {    background-color: #95A5A6;}
 .light-gray {    background-color: #BDC3C7;}
 .yellow     {    background-color: #F1C40F;}

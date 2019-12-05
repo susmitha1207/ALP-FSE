@@ -16,12 +16,7 @@ export class VolunteerNonpartComponent implements OnInit {
 
   feedback: FeedbackOption = { eventId: "", employeeId: "", choice: "", status: "" };
 
-  option1: string;
-  option2: string;
-  option3: string;
-  option4: string;
-  option5: string;
-  option6: string;
+  options=[];
 
   isHidden: boolean = true;
   response: Response = { message: "", httpStatus: 0 };
@@ -35,17 +30,18 @@ export class VolunteerNonpartComponent implements OnInit {
     this.feedback.employeeId = this.route.snapshot.queryParamMap.get('id');
     
     //url parameter checking method calling...On condition failure redirect to login
-    this.feedbackService.urlchk(this.feedback.eventId,this.feedback.employeeId);
+    //this.feedbackService.urlchk(this.feedback.eventId,this.feedback.employeeId);
 
     //load options from service
     //var options = this.feedbackService.getOptions();
-    this.option1 = "Did not recieve information about event";
-    this.option2 = "Event not what I excepted";
-    this.option3 = "Incorrectly registered";
-    this.option4 = "Unexpected personal commitment";
-    this.option5 = "Unexpected official work";
-    this.option6 = "Do not wish to disclose";
-
+     this.options= [
+        { id:1, option: "Did not recieve information about event" },
+        { id:2, option: "Event not what I excepted" },
+        { id:3, option: "Incorrectly registered" },
+        { id:4, option: "Unexpected personal commitment" },
+        { id:5, option: "Unexpected official work" },
+        { id:6, option: "Do not wish to disclose" },
+    ];
   }
 
   selectChangeHandler(event: any) {

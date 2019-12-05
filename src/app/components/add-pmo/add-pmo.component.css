@@ -9,16 +9,21 @@
     }
 }
 .tableDiv{
-    width: 60%;
+    width: 90%;
 }
 .addCls{
     border: solid thin lightgray;
-    width: 60%;
-    margin: 5% auto 2%;
+    width: 90%;
+    margin: 2% auto 0%;
 }
 .rowCls{
-    margin: 3% auto;
+    margin: 2% auto 0%;
 }
 .label{
     text-align: right;
+}
+.blueStrip{
+    margin-top: 0%;
+    background-color: #0039a6;
+    color: white;
 }

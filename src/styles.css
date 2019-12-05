@@ -51,12 +51,27 @@
   float: right;
 }
 .heading{
-    font-size: 18px !important;
+    font-size: 14px !important;
     padding-top: 7px;
     padding-bottom: 7px;
-    background-color: #c7c7c7b8 !important;
+    color: #ffffff;
+    padding-left: 2%;
+    /*background-color: #c7c7c7b8 !important;*/
 }
-
+.box{
+  margin: 25px;
+  background-color:white;
+}
+.box-header{
+  padding: 10px;
+  background-color: #0039a6;
+  border-radius: 6px 6px 0px 0px;
+  font-weight: bold;
+  color: white;
+}
+.box-content{
+  padding-top: 15px;
+}
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 
 @media screen and (max-width: 500px) {
@@ -76,4 +91,12 @@
     width: 15%;
     font-size: 11px !important;
   }
+  
+}
+.bg-light1{
+  background-color: #0039a6 !important;
+  text-align: left;
+}
+button{
+  font-size: 12px !important;
 }

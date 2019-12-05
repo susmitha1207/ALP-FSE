@@ -12,7 +12,8 @@ export class NeedAdminGuard implements CanActivate {
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    state: RouterStateSnapshot):
+    Observable<boolean> | Promise<boolean> | boolean {
     if (this.adminService.isAdmin())
       return true;
     else {

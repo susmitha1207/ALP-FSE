@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { User } from '../models/user';
+import { AppComponent } from './../app.component';
 
 @Component({
   selector: 'app-login-page',
@@ -14,13 +15,13 @@ export class LoginPageComponent implements OnInit {
   authenticated: boolean = false;
   message: String = "";
 
-  constructor(private authService: AuthenticationService, private router: Router) {
+  constructor(private authService: AuthenticationService, private router: Router,private AppComponent:AppComponent) {
 
   }
 
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard']);    
     }
   }
 clrMessage(){
@@ -46,6 +47,7 @@ clrMessage(){
     this.saveCredentialsToLocal();
     // this.router.navigate(['/dashboard']);
     this.authenticateLogin();
+    this.AppComponent.isloggin();
   }
 
   private authenticateLogin() {
@@ -85,6 +87,7 @@ clrMessage(){
 
     localStorage.setItem('username', this.credentials.username);
     localStorage.setItem('password', this.credentials.password);
+
   }
 }
 
